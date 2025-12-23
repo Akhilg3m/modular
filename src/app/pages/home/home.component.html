@@ -1,0 +1,135 @@
+<div class="home-container">
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Find Your Dream Car</h1>
+      <p class="hero-subtitle">
+        Browse thousands of quality vehicles. Buy with confidence or sell your car today!
+      </p>
+      <button class="hero-button" (click)="viewAllVehicles()">
+        Browse Cars →
+      </button>
+    </div>
+  </section>
+
+  <!-- USER TYPE SECTION -->
+  <section class="demo-section">
+    <h2>Account Type</h2>
+    <div class="role-demo">
+      <div class="current-role">
+        You are:
+        <span class="role-badge" [class.admin]="isAdminUser">
+          {{ currentUserRole === userRoleEnum.ADMIN ? 'Dealer' : 'Buyer' }}
+        </span>
+      </div>
+
+      <button class="toggle-button" (click)="toggleRole()">
+        Switch Account
+      </button>
+
+      <div class="role-content">
+        <div *ngIf="currentUserRole === userRoleEnum.ADMIN" class="admin-panel">
+          🏪 <strong>Dealer Access:</strong> Manage your listings and view analytics.
+        </div>
+        <div *ngIf="currentUserRole === userRoleEnum.USER" class="user-panel">
+          🛒 <strong>Buyer Access:</strong> Browse and purchase vehicles.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED VEHICLES -->
+  <section class="featured-section">
+    <h2>Featured Cars</h2>
+
+    <div class="loading" *ngIf="isLoading">
+      Loading featured cars...
+    </div>
+
+    <div class="featured-grid" *ngIf="!isLoading">
+      <div
+        class="featured-card"
+        *ngFor="let vehicle of featuredVehicles"
+        (click)="viewVehicle(vehicle.id)">
+        <img [src]="vehicle.image" [alt]="vehicle.Vehicle">
+        <div class="card-info">
+          <h3>{{ vehicle.Vehicle | capitalize:'all' }}</h3>
+          <p>{{ vehicle.manufacturer }}</p>
+          <span class="price">${{ vehicle.cost }}</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="view-all-button" (click)="viewAllVehicles()">
+      View All Cars
+    </button>
+  </section>
+
+  <!-- NEWSLETTER SECTION -->
+  <section class="newsletter-section">
+    <h2>Get Price Alerts</h2>
+    <p class="demo-description">
+      Subscribe to receive notifications when prices drop on your favorite cars.
+    </p>
+
+    <div class="newsletter-form">
+      <input
+        type="email"
+        placeholder="Enter your email"
+        [formControl]="emailControl"
+        (keyup.enter)="onSubscribe()">
+
+      <button
+        class="subscribe-button"
+        (click)="onSubscribe()"
+        [disabled]="emailControl.invalid">
+        Subscribe
+      </button>
+    </div>
+
+    <div class="validation-errors">
+      <p class="error" *ngIf="emailControl.errors?.['required'] && emailControl.touched">
+        Email is required.
+      </p>
+      <p class="error" *ngIf="emailControl.errors?.['invalidEmail'] && emailControl.touched">
+        Please enter a valid email address.
+      </p>
+    </div>
+
+    <div class="form-debug" *ngIf="emailControl.value">
+      <small>
+        Value: {{ emailControl.value }} |
+        Valid: {{ emailControl.valid ? '✓' : '✗' }}
+      </small>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="tips-section">
+    <h2>Why Choose AutoMart</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <span class="tip-icon">✓</span>
+        <h3>Verified Sellers</h3>
+        <p>All dealers are verified and trusted</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-icon">💰</span>
+        <h3>Best Prices</h3>
+        <p>Competitive pricing on all vehicles</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-icon">🔒</span>
+        <h3>Secure Purchase</h3>
+        <p>Safe and secure transactions</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-icon">📞</span>
+        <h3>24/7 Support</h3>
+        <p>We're here to help anytime</p>
+      </div>
+    </div>
+  </section>
+
+</div>

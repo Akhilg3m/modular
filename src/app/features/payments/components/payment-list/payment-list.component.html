@@ -1,0 +1,54 @@
+<div class="payment-list-container">
+  <button class="back-button" (click)="goBack()">← Back to Vehicle</button>
+
+  <div class="loading-container" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Loading payment options...</p>
+  </div>
+
+  <div class="error-container" *ngIf="errorMessage && !isLoading">
+    <div class="error-icon">⚠️</div>
+    <p class="error-message">{{ errorMessage }}</p>
+    <button class="primary-button" (click)="goBack()">Go Back</button>
+  </div>
+
+  <div class="payment-content" *ngIf="vehicle && !isLoading">
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <div class="vehicle-info">
+        <img [src]="vehicle.image" [alt]="vehicle.Vehicle" class="vehicle-thumb">
+        <div class="vehicle-details">
+          <h3>{{ vehicle.Vehicle }}</h3>
+          <p>{{ vehicle.manufacturer }} {{ vehicle.model }}</p>
+        </div>
+        <div class="vehicle-price">${{ vehicle.cost }}</div>
+      </div>
+    </div>
+
+    <div class="payment-options">
+      <h2>Select Payment Method</h2>
+
+      <div class="payment-method" (click)="selectUPI()">
+        <div class="method-icon">📱</div>
+        <div class="method-details">
+          <h3>UPI Payment</h3>
+          <p>Pay using your UPI ID (Google Pay, PhonePe, Paytm)</p>
+        </div>
+        <div class="method-arrow">→</div>
+      </div>
+
+      <div class="payment-method" (click)="selectCard()">
+        <div class="method-icon">💳</div>
+        <div class="method-details">
+          <h3>Credit / Debit Card</h3>
+          <p>Pay using Visa, Mastercard, or other cards</p>
+        </div>
+        <div class="method-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="secure-badge">
+      <span>🔒</span> Your payment information is secure and encrypted
+    </div>
+  </div>
+</div>

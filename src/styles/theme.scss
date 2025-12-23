@@ -1,0 +1,156 @@
+/**
+ * ============================================
+ * VEHICLE SELLING APP THEME
+ * ============================================
+ * Professional automotive marketplace design
+ */
+
+// ============================================
+// LIGHT THEME - Clean Dealership Look
+// ============================================
+
+.light-theme {
+  // Primary - Deep Blue (Trust & Reliability)
+  --primary-color: #1a56db;
+  --primary-hover: #1e429f;
+  --primary-light: #e1effe;
+  --primary-rgb: 26, 86, 219;
+
+  // Secondary - Emerald Green (Go/Buy)
+  --secondary-color: #059669;
+  --secondary-hover: #047857;
+
+  // Accent - Orange (Deals/Highlights)
+  --accent-color: #ea580c;
+  --accent-hover: #c2410c;
+  --accent-light: #fff7ed;
+
+  // Success, Warning, Error
+  --success-color: #16a34a;
+  --warning-color: #d97706;
+  --error-color: #dc2626;
+  --info-color: #0284c7;
+
+  // Backgrounds
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-hover: #e2e8f0;
+  --bg-card: #ffffff;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+
+  // Text
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+
+  // Borders
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --border-focus: #1a56db;
+
+  // Header - Dark Professional
+  --header-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --header-text: #ffffff;
+
+  // Sidebar
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #334155;
+  --sidebar-hover: #f1f5f9;
+  --sidebar-active: #e1effe;
+  --sidebar-border: #e2e8f0;
+
+  // Footer
+  --footer-bg: #0f172a;
+  --footer-text: #94a3b8;
+  --footer-heading: #ffffff;
+
+  // Cards
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.1), 0 6px 10px rgba(0, 0, 0, 0.08);
+
+  // Price tag
+  --price-color: #059669;
+  --price-bg: #ecfdf5;
+
+  // Badge colors
+  --badge-new: #16a34a;
+  --badge-featured: #ea580c;
+  --badge-sale: #dc2626;
+}
+
+// ============================================
+// DARK THEME - Premium Night Mode
+// ============================================
+
+.dark-theme {
+  // Primary - Bright Blue
+  --primary-color: #3b82f6;
+  --primary-hover: #60a5fa;
+  --primary-light: #1e3a5f;
+  --primary-rgb: 59, 130, 246;
+
+  // Secondary
+  --secondary-color: #10b981;
+  --secondary-hover: #34d399;
+
+  // Accent
+  --accent-color: #f97316;
+  --accent-hover: #fb923c;
+  --accent-light: #431407;
+
+  // Success, Warning, Error
+  --success-color: #22c55e;
+  --warning-color: #eab308;
+  --error-color: #ef4444;
+  --info-color: #38bdf8;
+
+  // Backgrounds
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --bg-hover: #475569;
+  --bg-card: #1e293b;
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+
+  // Text
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+
+  // Borders
+  --border-color: #334155;
+  --border-hover: #475569;
+  --border-focus: #3b82f6;
+
+  // Header
+  --header-bg: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+  --header-text: #f1f5f9;
+
+  // Sidebar
+  --sidebar-bg: #1e293b;
+  --sidebar-text: #e2e8f0;
+  --sidebar-hover: #334155;
+  --sidebar-active: #1e3a5f;
+  --sidebar-border: #334155;
+
+  // Footer
+  --footer-bg: #020617;
+  --footer-text: #64748b;
+  --footer-heading: #f1f5f9;
+
+  // Cards
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+  // Price
+  --price-color: #10b981;
+  --price-bg: #064e3b;
+
+  // Badges
+  --badge-new: #22c55e;
+  --badge-featured: #f97316;
+  --badge-sale: #ef4444;
+}

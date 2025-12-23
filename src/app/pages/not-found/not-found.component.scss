@@ -1,0 +1,123 @@
+.not-found-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  padding: 24px;
+  text-align: center;
+}
+
+.error-content {
+  max-width: 600px;
+}
+
+.error-code {
+  font-size: 10rem;
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
+  .error-code {
+    font-size: 6rem;
+  }
+}
+
+h1 {
+  margin: 0 0 16px;
+  color: var(--text-primary);
+  font-size: 28px;
+}
+
+.error-description {
+  color: var(--text-secondary);
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.attempted-url {
+  margin-bottom: 32px;
+
+  code {
+    background-color: var(--bg-tertiary);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: monospace;
+    color: var(--error-color);
+  }
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: white;
+
+  &:hover {
+    background: var(--primary-hover);
+  }
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+
+  &:hover {
+    background: var(--bg-hover);
+  }
+}
+
+.decoration {
+  margin-top: 48px;
+
+  .lost-car {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 16px;
+    animation: drive 2s ease-in-out infinite;
+  }
+
+  p {
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+}
+
+@keyframes drive {
+  0%, 100% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}

@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="header-left">
+    <button class="menu-toggle" (click)="onMenuClick()" aria-label="Toggle sidebar">
+      <span class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <a routerLink="/" class="logo">
+      <span class="logo-icon">🚘</span>
+      <span class="logo-text">{{ appName }}</span>
+    </a>
+  </div>
+
+  <nav class="header-nav">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a routerLink="/vehicles" routerLinkActive="active">Buy Cars</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+  </nav>
+
+  <div class="header-right">
+    <button class="theme-toggle" (click)="onThemeToggle()" aria-label="Toggle theme">
+      <span *ngIf="isDarkTheme">☀️</span>
+      <span *ngIf="!isDarkTheme">🌙</span>
+    </button>
+    <button class="sell-btn">Sell Your Car</button>
+  </div>
+</header>

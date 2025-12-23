@@ -1,0 +1,23 @@
+<aside class="sidebar" [class.collapsed]="!isOpen">
+  <div class="sidebar-header" *ngIf="isOpen">
+    <span class="sidebar-title">Browse</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a *ngFor="let item of menuItems"
+       [routerLink]="item.route"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact: item.route === '/'}"
+       class="nav-item">
+      <span class="nav-icon">{{ item.icon }}</span>
+      <span class="nav-label" *ngIf="isOpen">{{ item.label }}</span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer" *ngIf="isOpen">
+    <div class="promo-box">
+      <span>🔥</span>
+      <p>Special Deals Available!</p>
+    </div>
+  </div>
+</aside>

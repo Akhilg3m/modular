@@ -1,0 +1,21 @@
+/**
+ * ============================================
+ * EMPTY LAYOUT STYLES
+ * ============================================
+ *
+ * Simple full-screen container.
+ * Pages using this layout have complete control
+ * over their appearance.
+ */
+
+.empty-layout {
+  // Full viewport
+  min-height: 100vh;
+  width: 100%;
+
+  // Default background
+  background-color: var(--bg-primary);
+
+  // Allow scrolling if content is taller than viewport
+  overflow-y: auto;
+}

@@ -1,0 +1,19 @@
+/**
+ * ============================================
+ * APP COMPONENT STYLES
+ * ============================================
+ *
+ * This is minimal because the AppComponent
+ * is just a container for the router-outlet.
+ *
+ * Most styling is in:
+ * - Global styles (styles.scss)
+ * - Layout components
+ * - Individual components
+ */
+
+:host {
+  // :host selects the component's host element (app-root)
+  display: block;
+  min-height: 100vh;
+}

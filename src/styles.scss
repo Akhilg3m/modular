@@ -1,1 +1,243 @@
-/* You can add global styles to this file, and also import other style files */
+/**
+ * ============================================
+ * GLOBAL STYLES
+ * ============================================
+ *
+ * BEGINNER EXPLANATION:
+ * --------------------
+ * This is the MAIN stylesheet for the entire application.
+ * Styles here apply EVERYWHERE in the app.
+ *
+ * We import:
+ * 1. Variables - Color, spacing, font definitions
+ * 2. Mixins - Reusable style patterns
+ * 3. Theme - Light/dark theme definitions
+ *
+ * STYLES ORGANIZATION:
+ * - styles.scss (this file) - Global styles, resets
+ * - styles/_variables.scss - Variables
+ * - styles/_mixins.scss - Mixins
+ * - styles/theme.scss - Theme colors
+ * - component.scss - Component-specific styles
+ */
+
+// ============================================
+// IMPORT STYLE FILES
+// ============================================
+@import 'styles/variables';
+@import 'styles/mixins';
+@import 'styles/theme';
+
+// ============================================
+// CSS RESET / NORMALIZE
+// ============================================
+
+/**
+ * CSS RESET
+ * ---------
+ * Remove default browser styles for consistency.
+ * Every browser has different defaults - this evens it out.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  // Smooth scrolling for anchor links
+  scroll-behavior: smooth;
+  // Prevent font size adjustment on orientation change
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  // Typography
+  font-family: 'Inter', $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+
+  // Colors (from theme)
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+
+  // Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Layout
+  min-height: 100vh;
+
+  // Transitions for theme switching
+  transition: background-color $transition-base, color $transition-base;
+}
+
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: var(--text-primary);
+}
+
+h1 { font-size: $font-size-2xl; }
+h2 { font-size: $font-size-xl; }
+h3 { font-size: $font-size-lg; }
+h4 { font-size: $font-size-base; }
+
+p {
+  margin-bottom: $spacing-md;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  @include transition(color);
+
+  &:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+  }
+}
+
+// ============================================
+// LISTS
+// ============================================
+
+ul, ol {
+  list-style-position: inside;
+  margin-bottom: $spacing-md;
+}
+
+// ============================================
+// IMAGES
+// ============================================
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// ============================================
+// FORMS
+// ============================================
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+// ============================================
+// UTILITY CLASSES
+// ============================================
+
+/**
+ * UTILITY CLASSES
+ * ---------------
+ * Quick helper classes for common styling needs.
+ * Use sparingly - component styles are preferred.
+ */
+
+// Text alignment
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+// Display
+.hidden { display: none !important; }
+.block { display: block; }
+.inline { display: inline; }
+.flex { display: flex; }
+
+// Spacing
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+
+// Colors
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-success { color: var(--success-color); }
+.text-warning { color: var(--warning-color); }
+.text-error { color: var(--error-color); }
+
+// ============================================
+// SCROLLBAR STYLING (Optional)
+// ============================================
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+
+  &:hover {
+    background: var(--text-secondary);
+  }
+}
+
+// ============================================
+// SELECTION STYLING
+// ============================================
+
+::selection {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+// ============================================
+// FOCUS STYLES (Accessibility)
+// ============================================
+
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+// Remove outline for mouse users
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/**
+ * ============================================
+ * GLOBAL STYLES SUMMARY
+ * ============================================
+ *
+ * This file provides:
+ * 1. CSS Reset - Consistent starting point
+ * 2. Base typography - Fonts, sizes, colors
+ * 3. Theme application - Light/dark mode
+ * 4. Utility classes - Quick helpers
+ * 5. Accessibility - Focus styles
+ *
+ * Component-specific styles go in their own files:
+ * - header.component.scss
+ * - vehicle-list.component.scss
+ * - etc.
+ */

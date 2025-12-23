@@ -1,0 +1,60 @@
+/**
+ * ============================================
+ * MAIN LAYOUT STYLES
+ * ============================================
+ *
+ * BEGINNER EXPLANATION:
+ * This creates a classic web app layout with:
+ * - Fixed header at top
+ * - Collapsible sidebar on left
+ * - Scrollable content area
+ * - Fixed footer at bottom
+ */
+
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.main-layout {
+  // Full viewport height
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+}
+
+.layout-body {
+  // Take remaining space between header and footer
+  flex: 1;
+  display: flex;
+  // Account for fixed header
+  margin-top: $header-height;
+}
+
+.main-content {
+  // Take remaining space after sidebar
+  flex: 1;
+  padding: $spacing-lg;
+  overflow-y: auto;
+  // Account for sidebar width
+  margin-left: $sidebar-width;
+  // Smooth transition when sidebar toggles
+  transition: margin-left $transition-base;
+
+  // Minimum height for content
+  min-height: calc(100vh - #{$header-height} - #{$footer-height});
+}
+
+// When sidebar is collapsed
+.sidebar-collapsed {
+  .main-content {
+    margin-left: $sidebar-collapsed-width;
+  }
+}
+
+// Responsive: Hide sidebar on mobile
+@include mobile-only {
+  .main-content {
+    margin-left: 0;
+    padding: $spacing-md;
+  }
+}

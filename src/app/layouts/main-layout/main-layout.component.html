@@ -1,0 +1,51 @@
+<!--
+============================================
+MAIN LAYOUT TEMPLATE
+============================================
+
+BEGINNER EXPLANATION:
+This template creates the page structure.
+- app-header: Top navigation bar
+- app-sidebar: Side menu
+- router-outlet: Where page content appears
+- app-footer: Bottom section
+
+The [class.sidebar-open] is a CLASS BINDING:
+- If isSidebarOpen is true → adds 'sidebar-open' class
+- If isSidebarOpen is false → removes the class
+-->
+
+<div class="main-layout" [class.sidebar-collapsed]="!isSidebarOpen">
+
+  <!-- HEADER COMPONENT -->
+  <!-- (toggleSidebar) is an OUTPUT binding - listens for events from child -->
+  <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+
+  <!-- MAIN CONTENT AREA -->
+  <div class="layout-body">
+
+    <!-- SIDEBAR COMPONENT -->
+    <!-- [isOpen] is an INPUT binding - passes data to child -->
+    <app-sidebar [isOpen]="isSidebarOpen"></app-sidebar>
+
+    <!-- PAGE CONTENT AREA -->
+    <main class="main-content">
+      <!--
+        ROUTER OUTLET
+        =============
+        This is where Angular loads the page components!
+        When URL changes:
+        - /vehicles → VehicleListComponent loads here
+        - /vehicle/1 → VehicleDetailComponent loads here
+        - etc.
+      -->
+      <router-outlet></router-outlet>
+    </main>
+
+  </div>
+
+  <!-- FOOTER COMPONENT -->
+  <app-footer></app-footer>
+
+</div>
+

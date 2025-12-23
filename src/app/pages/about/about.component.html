@@ -1,0 +1,82 @@
+<div class="about-container">
+
+  <header class="about-header">
+    <button class="back-button" (click)="goHome()">
+      ← Back to Home
+    </button>
+    <h1>🚘 AutoMart</h1>
+  </header>
+
+  <section class="about-hero">
+    <div class="hero-content">
+      <h2>About AutoMart</h2>
+      <p>
+        AutoMart is your trusted online marketplace for buying and selling vehicles.
+        We connect buyers with verified sellers for a seamless car shopping experience.
+      </p>
+      <p class="version-info">Version {{ appVersion }}</p>
+    </div>
+  </section>
+
+  <section class="layout-info">
+    <div class="info-card highlight">
+      <h3>🚗 Our Mission</h3>
+      <p>
+        We believe buying a car should be simple, transparent, and enjoyable.
+        Our platform offers:
+      </p>
+      <ul>
+        <li>Wide selection of quality vehicles</li>
+        <li>Verified and trusted sellers</li>
+        <li>Transparent pricing</li>
+        <li>Secure transactions</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <h3>Why Choose Us</h3>
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <span class="feature-icon">{{ feature.icon }}</span>
+        <h4>{{ feature.title }}</h4>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tech-section">
+    <h3>Vehicle Categories</h3>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <span class="tech-logo">🚗</span>
+        <span>Sedans</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-logo">🚙</span>
+        <span>SUVs</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-logo">🛻</span>
+        <span>Trucks</span>
+      </div>
+      <div class="tech-item">
+        <span class="tech-logo">⚡</span>
+        <span>Electric</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h3>Ready to Find Your Car?</h3>
+    <p>Browse our collection of quality vehicles today!</p>
+    <button class="cta-button" (click)="goToVehicles()">
+      Browse Cars →
+    </button>
+  </section>
+
+  <footer class="about-footer">
+    <p>&copy; AutoMart 2024 - Your Trusted Car Marketplace</p>
+  </footer>
+
+</div>
